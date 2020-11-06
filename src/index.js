@@ -9,10 +9,12 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
+import axios from 'axios';
+import {takeEvery, put} from 'redux-saga/effects';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-
+    yield takeEvery('GET_MOVIES', getMovies);
 }
 
 // Create sagaMiddleware
@@ -36,6 +38,12 @@ const genres = (state = [], action) => {
         default:
             return state;
     }
+}
+
+function* getMovies(){
+    const moviesResponse = yield axios.get(`/api/movie/`);
+    console.log('MOVIES', moviesResponse);
+    yield put({type: 'SET_MOVIES', payload: moviesResponse.data});
 }
 
 // Create one store that all components can use
