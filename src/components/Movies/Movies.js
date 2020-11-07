@@ -8,7 +8,13 @@ class Movies extends Component {
     }
 
     getMovies = () => {
-        this.props.dispatch({ type: 'GET_MOVIES' })
+        this.props.dispatch({type: 'GET_MOVIES'})
+    }
+
+    handleClick = () => {
+        console.log('Clicked');
+        // navigate to /details page
+        // pass down movie id to details and then perform a get request with the id as a search
     }
 
     render() {
@@ -16,7 +22,7 @@ class Movies extends Component {
             <div>
                 {this.props.reduxState.movies.map((movie) => {
                     return <div key={movie.id} className="movieList">
-                        <button>
+                        <button onClick={this.handleClick}>
                             <img src={movie.poster}/>
                         </button>
                     </div>

@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <h1>Movies!</h1>
         <Router>
-          <Movies/>
+          <Route exact path='/' component={Movies}/>
           {/* ADD PAGES! */}
         </Router>
         <p>Empty Page</p>
