@@ -11,6 +11,8 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 import {takeEvery, put} from 'redux-saga/effects';
+// import Bottstrap-react
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Create the rootSaga generator function
 function* rootSaga() {
