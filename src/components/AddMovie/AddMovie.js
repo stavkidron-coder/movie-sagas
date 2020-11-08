@@ -49,16 +49,16 @@ class AddMovie extends Component {
     render() {
         
         return (
-            <Container className="body">
-                <Jumbotron className="addMovieJumbotron">
-                    <Container>
-                        <h1>Add a Movie!</h1>
-                        <p>Enter in information to add a new movie to the database</p>
-                        <hr></hr>
-                        <Button color="primary" onClick={this.homeBtn}>Back to Movies</Button>
-                    </Container>
-                </Jumbotron>
-
+            <div className="body">
+            <Jumbotron className="addMovieJumbotron">
+                <Container>
+                    <h1>Add a Movie!</h1>
+                    <p>Enter in information to add a new movie to the database</p>
+                    <hr></hr>
+                    <Button color="primary" onClick={this.homeBtn}>Back to Movies</Button>
+                </Container>
+            </Jumbotron>
+            <Container>
                 <Form>
                     <FormGroup>
                         <Col xs="4">
@@ -127,6 +127,7 @@ class AddMovie extends Component {
                 </Form>
                 
             </Container>
+            </div>
         );
         }
     }

@@ -57,7 +57,12 @@ class Movies extends Component {
                                     </CardTitle>
                                 </CardBody>
                                
-                                <img width="100%" src={movie.poster} alt={movie.description}/>
+                                <img
+                                    width="100%"
+                                    src={movie.poster}
+                                    alt={movie.description}
+                                    onClick={() => this.handleClick(movie)}
+                                />
 
                                 <CardText className="cardText">
                                     <Button onClick={() => this.handleClick(movie)}>
