@@ -1,0 +1,33 @@
+.mediaText{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.detailsJumbotron {
+    text-align: left;
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.movieDescription{
+    margin-bottom: 10px;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.genreList {
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.detailsBody {
+    text-align: right;
+}
+
+.homeBtn {
+    margin-top: 10px;
+}
