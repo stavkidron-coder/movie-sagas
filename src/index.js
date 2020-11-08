@@ -18,6 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
     yield takeEvery('GET_SPECIFIC_INFO', getSpecificInfo);
+    yield takeEvery('ADD_NEW_MOVIE', addMovie);
 }
 
 // Create sagaMiddleware
@@ -70,6 +71,15 @@ function* getSpecificInfo(action) {
     }
     catch (error) {
         console.log('ERROR in SET DETAILS', error);
+    }
+}
+
+function* addMovie(action){
+    try {
+        yield axios.post('/api/movie', action.payload);
+    }
+    catch (error) {
+        console.log('ERROR in addMovie post', error);
     }
 }
 
