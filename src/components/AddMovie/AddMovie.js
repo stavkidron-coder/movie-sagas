@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './AddMovie.css';
-import { Container, Button, Form, FormGroup, Label, Input, Jumbotron, Col} from 'reactstrap';
+import { Container,
+    Button,
+    Form,
+    FormGroup,
+    Label,
+    Input,
+    Jumbotron,
+    Col,  
+    } from 'reactstrap';
+
 
 class AddMovie extends Component {
 
@@ -38,7 +47,7 @@ class AddMovie extends Component {
     }
 
     render() {
-
+        
         return (
             <Container className="body">
                 <Jumbotron className="addMovieJumbotron">
@@ -51,19 +60,19 @@ class AddMovie extends Component {
                 </Jumbotron>
 
                 <Form>
-                        <FormGroup>
-                            <Col xs="4">
-                                <Label htmlFor="titleInput">Movie Title</Label>
-                                <Input id="titleInput" type="text" placeholder="Movie Title" onChange={(event) => this.handleChange(event, 'title')}/>
-                            </Col>
-                        </FormGroup>
-
-                        <FormGroup>
+                    <FormGroup>
                         <Col xs="4">
-                            <Label htmlFor="posterInput">Poster URL</Label>
-                            <Input id="posterInput" placeholder="Image URL" onChange={(event) => this.handleChange(event, 'poster')}/>
+                            <Label htmlFor="titleInput">Movie Title</Label>
+                            <Input id="titleInput" type="text" placeholder="Movie Title" onChange={(event) => this.handleChange(event, 'title')}/>
                         </Col>
-                        </FormGroup>
+                    </FormGroup>
+
+                    <FormGroup>
+                    <Col xs="4">
+                        <Label htmlFor="posterInput">Poster URL</Label>
+                        <Input id="posterInput" placeholder="Image URL" onChange={(event) => this.handleChange(event, 'poster')}/>
+                    </Col>
+                    </FormGroup>
                     
                     <FormGroup>
                         <Col xs="4">
@@ -116,7 +125,7 @@ class AddMovie extends Component {
                         </Col>
                     </FormGroup>
                 </Form>
-
+                
             </Container>
         );
         }
