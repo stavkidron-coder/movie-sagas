@@ -41,7 +41,7 @@ class AddMovie extends Component {
 
         return (
             <Container className="body">
-                <Jumbotron>
+                <Jumbotron className="addMovieJumbotron">
                     <Container>
                         <h1>Add a Movie!</h1>
                         <p>Enter in information to add a new movie to the database</p>
