@@ -103,14 +103,13 @@ class AddMovie extends Component {
                         <Col>
                             <Button
                                 className="button"
-                                outline
                                 color="success"
                                 onClick={this.submitBtn}>
                                     Save
                             </Button>
                             <Button
                                 className="button"
-                                outline color="danger"
+                                color="danger"
                                 onClick={this.homeBtn}>
                                     Cancel
                             </Button>
