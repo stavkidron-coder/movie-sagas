@@ -1,3 +1,9 @@
+.detailsPage {
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(34, 34, 34));
+    margin-bottom: 0;
+    min-height: 100vh;
+}
+
 .mediaText{
     text-align: left;
     margin-left: 10px;
@@ -5,6 +11,9 @@
 
 .detailsJumbotron {
     text-align: left;
+    background-image: linear-gradient(to right, rgb(19, 19, 19) , rgb(92, 92, 92));
+    color: white;
+    border-radius: 0 !important;
 }
 
 .navbar {
@@ -13,21 +22,26 @@
 
 .movieDescription{
     margin-bottom: 10px;
-    border: 1px solid rgb(215, 215, 215);
+    border: 1px solid rgb(174, 174, 174);
     border-radius: 5px;
     padding: 10px;
 }
 
 .genreList {
-    border: 1px solid rgb(215, 215, 215);
+    border: 1px solid rgb(174, 174, 174);
     border-radius: 5px;
     padding: 10px;
 }
 
 .detailsBody {
     text-align: right;
+    color: white;
 }
 
 .homeBtn {
     margin-top: 10px;
+}
+
+hr {
+    background-color: white;
 }

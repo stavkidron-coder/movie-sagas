@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Container, Button, Jumbotron, Media, Row, Col, Navbar, Nav, NavLink} from 'reactstrap';
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faHome, faPlus } from '@fortawesome/free-solid-svg-icons'
 import './Details.css';
-import { HashRouter as Link } from "react-router-dom";
+
+const arrowLeft = <FontAwesomeIcon icon={faArrowLeft} />
+const home = <FontAwesomeIcon icon={faHome} />
+const plus = <FontAwesomeIcon icon={faPlus} />
 
 class Details extends Component {
 
@@ -13,12 +19,12 @@ class Details extends Component {
 
     render() {
         return (
-        <>
-            <Navbar color="light" light expand="md">
+        <div className="detailsPage">
+            <Navbar dark expand="md">
                 <Container>
                     <Nav className="mr-auto" navbar>
-                        <NavLink href='http://localhost:3000/'>HOME</NavLink>
-                        <NavLink href='http://localhost:3000/#/addMovie'>ADD MOVIE</NavLink>
+                        <NavLink href='http://localhost:3000/'>{home} HOME</NavLink>
+                        <NavLink href='http://localhost:3000/#/addMovie'>{plus} ADD MOVIE</NavLink>
                     </Nav>
                 </Container>
             </Navbar>
@@ -55,7 +61,7 @@ class Details extends Component {
                                     <Col xs="4">
                                         <div className="genreList">
                                             <h5>Genres</h5>
-                                            <hr/>
+                                            <hr className="hr"/>
                                             <ul>
                                                 {this.props.reduxState.movieDetails.map((movie) => {
                                                     return <li>{movie.name}</li>
@@ -73,12 +79,13 @@ class Details extends Component {
                 <Container>
                     <Button
                         className="homeBtn"
+                        outline
                         onClick={this.backBtn}
                         color="primary">
-                            Return to movies
+                            {arrowLeft} Return to movies
                     </Button>
                 </Container>
-        </>
+        </div>
         );
     }
 }
