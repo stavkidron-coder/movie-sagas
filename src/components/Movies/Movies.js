@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Button, Card, CardBody, CardTitle, CardText, Jumbotron} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import './Movies.css';
+
+const plus = <FontAwesomeIcon icon={faPlus} />
 
 class Movies extends Component {
 
@@ -30,15 +34,15 @@ class Movies extends Component {
             <div className="moviesBody">
                 
                 <Jumbotron className="moviesJumbotron">
-                    <h1>Movies!</h1>
+                    <Container>
+                        <h1>Movies!</h1>
+                        {/* AddMovie button */}
+                        <Button color="primary" onClick={this.addMovieBtn}>{plus} Add Movie</Button>
+                    </Container>
+                    
                 </Jumbotron>
 
                 <Container>
-
-                <div>
-                    {/* AddMovie button */}
-                    <Button color="primary" onClick={this.addMovieBtn}>Add Movie</Button>
-                </div>
 
                 <div>
                     {this.props.reduxState.movies.map((movie) => {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Container, Button, Jumbotron, Media, Row, Col, Navbar, Nav, NavLink} from 'reactstrap';
-import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faHome, faPlus } from '@fortawesome/free-solid-svg-icons'
 import './Details.css';
