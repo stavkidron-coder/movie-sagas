@@ -11,6 +11,10 @@ class Movies extends Component {
         this.props.dispatch({type: 'GET_MOVIES'});
     }
 
+    addMovieBtn = () => {
+        this.props.history.push('/addMovie');
+    }
+
     handleClick = (movie) => {
         console.log('Clicked');
         // navigate to /details page
@@ -21,6 +25,12 @@ class Movies extends Component {
 
     render() {
         return (
+            <>
+            <div>
+                {/* AddMovie button */}
+                <button onClick={this.addMovieBtn}>Add Movie</button>
+            </div>
+
             <div>
                 {this.props.reduxState.movies.map((movie) => {
                     return <div key={movie.id} className="movieList">
@@ -30,6 +40,7 @@ class Movies extends Component {
                     </div>
                 })}
             </div>
+            </>
         );
     }
 }
