@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Container, Button, Card, CardBody, CardTitle, CardText, Jumbotron} from 'reactstrap';
+import './Movies.css';
 
 class Movies extends Component {
 
@@ -25,22 +27,45 @@ class Movies extends Component {
 
     render() {
         return (
-            <>
-            <div>
-                {/* AddMovie button */}
-                <button onClick={this.addMovieBtn}>Add Movie</button>
-            </div>
+            <div className="moviesBody">
+                
+                <Jumbotron className="moviesJumbotron">
+                    <h1>Movies!</h1>
+                </Jumbotron>
 
-            <div>
-                {this.props.reduxState.movies.map((movie) => {
-                    return <div key={movie.id} className="movieList">
-                        <button onClick={() => this.handleClick(movie)}>
-                            <img src={movie.poster} alt={movie.description}/>
-                        </button>
-                    </div>
-                })}
+                <Container>
+
+                <div>
+                    {/* AddMovie button */}
+                    <Button color="primary" onClick={this.addMovieBtn}>Add Movie</Button>
+                </div>
+
+                <div>
+                    {this.props.reduxState.movies.map((movie) => {
+                        return <div key={movie.id} className="movieList">
+                            <Card className="movieCards">
+
+                                <CardBody>
+                                    <CardTitle tag="h5" className="cardTitle">
+                                        <h5>{movie.title}</h5>
+                                    </CardTitle>
+                                </CardBody>
+                               
+                                <img width="100%" src={movie.poster} alt={movie.description}/>
+
+                                <CardText className="cardText">
+                                    <Button onClick={() => this.handleClick(movie)}>
+                                        Details
+                                    </Button>
+                                </CardText>
+                           
+
+                            </Card>
+                        </div>
+                    })}
+                </div>
+                </Container>
             </div>
-            </>
         );
     }
 }

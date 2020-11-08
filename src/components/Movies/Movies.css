@@ -1,0 +1,17 @@
+.moviesJumbotron {
+    margin-top: 0;
+    background-color: white !important;
+}
+
+.movieCards {
+    width: 200px;
+    margin: 20px;
+}
+
+.cardText {
+    padding:10px
+}
+
+.moviesBody {
+    background-color: rgb(244, 244, 244);
+}
