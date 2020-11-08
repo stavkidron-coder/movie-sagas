@@ -47,7 +47,9 @@ class Movies extends Component {
 
                                 <CardBody>
                                     <CardTitle tag="h5" className="cardTitle">
-                                        <h5>{movie.title}</h5>
+                                        <div>
+                                            <h5>{movie.title}</h5>
+                                        </div>
                                     </CardTitle>
                                 </CardBody>
                                

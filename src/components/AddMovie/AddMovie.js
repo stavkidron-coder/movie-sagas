@@ -75,8 +75,13 @@ class AddMovie extends Component {
                     <FormGroup>
                         <Col xs="4">
                             <Label htmlFor="genreInput">Movie Genre</Label>
-                            <Input type="select" name="genres" id="genreInput" onChange={(event) => this.handleChange(event, 'genre_id')}>
-                                <option value={0}>Select Genre</option>
+                            <Input 
+                                type="select"
+                                name="genres"
+                                id="genreInput"
+                                onChange={(event) => this.handleChange(event, 'genre_id')}
+                            >
+                                <option value="">Select  Genre</option>
                                 <option value={1}>Adventure</option>
                                 <option value={2}>Animated</option>
                                 <option value={3}>Biographical</option>
@@ -96,7 +101,19 @@ class AddMovie extends Component {
                     
                     <FormGroup>
                         <Col>
-                            <Button outline color="success" onClick={this.submitBtn}>Add Movie</Button>
+                            <Button
+                                className="button"
+                                outline
+                                color="success"
+                                onClick={this.submitBtn}>
+                                    Save
+                            </Button>
+                            <Button
+                                className="button"
+                                outline color="danger"
+                                onClick={this.homeBtn}>
+                                    Cancel
+                            </Button>
                         </Col>
                     </FormGroup>
                 </Form>
