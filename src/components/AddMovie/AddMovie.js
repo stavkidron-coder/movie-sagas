@@ -38,12 +38,19 @@ class AddMovie extends Component {
       }
 
     submitBtn = () => {
-        console.log('movie to be submitted:', this.state.movie);
-        this.props.dispatch({type: 'ADD_NEW_MOVIE', payload: this.state.movie});
-        // alert to let user know the movie was added
-        alert('Movie successfully added!');
-        // redirect back to movies page
-        this.props.history.push('/');
+        if(this.state.movie.title === '' || this.state.movie.poster === '' || this.state.movie.description === '' || this.state.movie.genre_id === ''){
+            alert("Fill in all fields!");
+            return;
+        }
+        else {
+            console.log('movie to be submitted:', this.state.movie);
+            this.props.dispatch({type: 'ADD_NEW_MOVIE', payload: this.state.movie});
+            // alert to let user know the movie was added
+            alert('Movie successfully added!');
+            // redirect back to movies page
+            this.props.history.push('/');
+        }
+
     }
 
     render() {
